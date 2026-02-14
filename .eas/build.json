@@ -3,5 +3,10 @@
     "android": {
       "credentialsSource": "remote"
     }
+  },
+  "preview": {
+    "android": {
+      "credentialsSource": "remote"
+    }
   }
 }
