@@ -1,0 +1,7 @@
+{
+  "production": {
+    "android": {
+      "credentialsSource": "remote"
+    }
+  }
+}
