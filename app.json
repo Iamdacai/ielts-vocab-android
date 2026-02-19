@@ -3,7 +3,7 @@
     "name": "雅思智能背单词",
     "slug": "ielts-vocab-android",
     "version": "1.0.0",
-    "sdkVersion": "51.0.0",
+    "sdkVersion": "49.0.0",
     "android": {
       "package": "com.ieltsvocab"
     },
