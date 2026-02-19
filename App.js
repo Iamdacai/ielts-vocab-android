@@ -1,6 +1,7 @@
 /**
  * 雅思智能背单词 - Android版本
  * React Native跨平台应用（基于微信小程序版本重构）
+ * 第二阶段：真实API集成
  */
 
 import React, { useState, useEffect } from 'react';
@@ -13,269 +14,233 @@ import {
   StyleSheet,
   Alert,
   Platform,
-  PermissionsAndroid,
+  ActivityIndicator,
+  ProgressBarAndroid,
 } from 'react-native';
-import Sound from 'react-native-sound';
-import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 import { getNewWords, recordProgress } from './src/utils/wordData';
-import { analyzePronunciation } from './src/utils/pronunciation';
+import { analyzePronunciation, playWordPronunciation } from './src/utils/pronunciation';
 
-// 音频播放工具
-const playWordPronunciation = async (word) => {
-  try {
-    // 检查音频权限（Android需要）
-    if (Platform.OS === 'android') {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
-        {
-          title: '麦克风权限',
-          message: '需要麦克风权限来播放和录制发音',
-          buttonNeutral: '稍后询问',
-          buttonNegative: '取消',
-          buttonPositive: '确定',
-        }
-      );
-      if (granted !== PermissionsAndroid.RESULTS.GRANTED) {
-        Alert.alert('权限被拒绝', '请在设置中开启麦克风权限');
-        return;
-      }
-    }
-
-    // 创建音频播放器
-    const audioUrl = `https://api.dictionaryapi.dev/media/pronunciations/en/${encodeURIComponent(word)}.mp3`;
-    
-    // 使用Sound库播放音频
-    const sound = new Sound(audioUrl, null, (error) => {
-      if (error) {
-        console.log('播放失败:', error);
-        Alert.alert('播放失败', '无法加载发音音频');
-        return;
-      }
-      sound.play((success) => {
-        if (success) {
-          console.log('播放完成');
-        } else {
-          console.log('播放失败');
-        }
-        sound.release();
-      });
-    });
-  } catch (error) {
-    console.error('播放错误:', error);
-    Alert.alert('播放错误', '发音播放失败');
-  }
-};
-
-// 录音工具
-const startPronunciationPractice = async (word, onRecordingComplete) => {
-  try {
-    // 请求录音权限
-    if (Platform.OS === 'android') {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
-        {
-          title: '录音权限',
-          message: '需要录音权限来进行发音练习',
-          buttonNeutral: '稍后询问',
-          buttonNegative: '取消',
-          buttonPositive: '确定',
-        }
-      );
-      if (granted !== PermissionsAndroid.RESULTS.GRANTED) {
-        Alert.alert('权限被拒绝', '请在设置中开启录音权限');
-        return;
-      }
-    }
-
-    const audioRecorderPlayer = new AudioRecorderPlayer();
-    
-    // 设置录音配置
-    const uri = await audioRecorderPlayer.startRecorder();
-    
-    // 5秒后自动停止
-    setTimeout(async () => {
-      const result = await audioRecorderPlayer.stopRecorder();
-      onRecordingComplete(result, word);
-    }, 5000);
-
-    return () => {
-      audioRecorderPlayer.stopRecorder();
-    };
-  } catch (error) {
-    console.error('录音错误:', error);
-    Alert.alert('录音错误', '无法开始录音');
-  }
-};
-
-// 单词学习组件
-const WordLearningScreen = ({ route }) => {
-  const { currentWord, totalWords, currentWordIndex } = route.params || {};
-  
+// 单词学习主组件
+const App = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [words, setWords] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [pronunciationScore, setPronunciationScore] = useState(null);
   const [feedback, setFeedback] = useState('');
 
-  const handlePlayPronunciation = () => {
+  // 加载新词
+  useEffect(() => {
+    loadNewWords();
+  }, []);
+
+  const loadNewWords = async () => {
+    try {
+      setLoading(true);
+      const newWords = await getNewWords();
+      if (newWords && newWords.length > 0) {
+        setWords(newWords);
+        setProgress((1 / newWords.length) * 100);
+      } else {
+        Alert.alert('提示', '暂无新词可学习');
+      }
+    } catch (error) {
+      console.error('加载新词失败:', error);
+      Alert.alert('错误', '加载新词失败，请检查网络连接');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const currentWord = words[currentWordIndex];
+
+  const showNextWord = () => {
+    if (currentWordIndex < words.length - 1) {
+      setCurrentWordIndex(currentWordIndex + 1);
+      setShowAnswer(false);
+      setPronunciationScore(null);
+      setFeedback('');
+      setProgress(((currentWordIndex + 2) / words.length) * 100);
+    } else {
+      Alert.alert('完成', '今日新词学习完成！');
+    }
+  };
+
+  const handlePlayPronunciation = async () => {
     if (!currentWord) return;
-    setIsPlaying(true);
-    playWordPronunciation(currentWord.word)
-      .finally(() => setIsPlaying(false));
+    try {
+      setIsPlaying(true);
+      await playWordPronunciation(currentWord.word);
+    } catch (error) {
+      console.error('播放发音失败:', error);
+      Alert.alert('播放失败', '发音播放失败');
+    } finally {
+      setIsPlaying(false);
+    }
   };
 
-  const handleStartPronunciationPractice = () => {
+  const handleStartPronunciationPractice = async () => {
     if (!currentWord || isRecording) return;
-    setIsRecording(true);
-    startPronunciationPractice(currentWord.word, (audioPath, word) => {
-      // 调用后端API进行发音分析
-      analyzePronunciation(audioPath, word)
-        .then(result => {
-          setPronunciationScore(result.score);
-          setFeedback(result.feedback);
-          setIsRecording(false);
-        })
-        .catch(error => {
-          console.error('分析失败:', error);
-          Alert.alert('分析失败', '发音分析服务不可用');
-          setIsRecording(false);
-        });
-    });
+    
+    try {
+      setIsRecording(true);
+      const result = await analyzePronunciation(currentWord.word);
+      setPronunciationScore(result.score);
+      setFeedback(result.feedback);
+      Alert.alert('发音评分', `得分: ${result.score}/100`);
+    } catch (error) {
+      console.error('发音分析失败:', error);
+      Alert.alert('分析失败', '发音分析服务不可用');
+    } finally {
+      setIsRecording(false);
+    }
   };
 
-  const handleKnow = () => {
-    // 认识：masteryScore = 75
-    recordProgress(currentWord.id, 'know', 75)
-      .then(() => {
-        // 移动到下一个单词
-        if (currentWordIndex < totalWords - 1) {
-          // 这里应该通过导航传递新参数
-          console.log('Move to next word');
-        } else {
-          Alert.alert('完成', '今日新词学习完成！');
-        }
-      })
-      .catch(error => {
-        console.error('记录进度失败:', error);
-        Alert.alert('错误', '记录进度失败');
-      });
+  const handleKnow = async () => {
+    try {
+      await recordProgress(currentWord.id, 'know', 75);
+      showNextWord();
+    } catch (error) {
+      console.error('记录进度失败:', error);
+      Alert.alert('错误', '记录进度失败');
+    }
   };
 
-  const handleHard = () => {
-    // 不确定：masteryScore = 50
-    recordProgress(currentWord.id, 'hard', 50)
-      .then(() => {
-        // 移动到下一个单词
-        if (currentWordIndex < totalWords - 1) {
-          console.log('Move to next word');
-        } else {
-          Alert.alert('完成', '今日新词学习完成！');
-        }
-      })
-      .catch(error => {
-        console.error('记录进度失败:', error);
-        Alert.alert('错误', '记录进度失败');
-      });
+  const handleHard = async () => {
+    try {
+      await recordProgress(currentWord.id, 'hard', 50);
+      showNextWord();
+    } catch (error) {
+      console.error('记录进度失败:', error);
+      Alert.alert('错误', '记录进度失败');
+    }
   };
 
-  const handleForgot = () => {
-    // 不认识：masteryScore = 25
-    recordProgress(currentWord.id, 'forgot', 25)
-      .then(() => {
-        // 移动到下一个单词
-        if (currentWordIndex < totalWords - 1) {
-          console.log('Move to next word');
-        } else {
-          Alert.alert('完成', '今日新词学习完成！');
-        }
-      })
-      .catch(error => {
-        console.error('记录进度失败:', error);
-        Alert.alert('错误', '记录进度失败');
-      });
+  const handleForgot = async () => {
+    try {
+      await recordProgress(currentWord.id, 'forgot', 25);
+      showNextWord();
+    } catch (error) {
+      console.error('记录进度失败:', error);
+      Alert.alert('错误', '记录进度失败');
+    }
   };
+
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <ActivityIndicator size="large" color="#4a6cf7" />
+        <Text style={styles.loadingText}>加载中...</Text>
+      </SafeAreaView>
+    );
+  }
 
   if (!currentWord) {
     return (
       <SafeAreaView style={styles.container}>
-        <Text>加载中...</Text>
+        <Text style={styles.noWordsText}>暂无单词可学习</Text>
       </SafeAreaView>
     );
   }
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        {/* 进度条 */}
-        <View style={styles.progressContainer}>
-          <Text style={styles.progressText}>
-            {currentWordIndex + 1}/{totalWords}
-          </Text>
+      {/* 进度条 */}
+      <View style={styles.progressSection}>
+        {Platform.OS === 'android' ? (
+          <ProgressBarAndroid 
+            styleAttr="Horizontal" 
+            indeterminate={false} 
+            progress={progress / 100} 
+            color="#4a6cf7" 
+            style={styles.progressBar}
+          />
+        ) : null}
+        <Text style={styles.progressText}>{currentWordIndex + 1}/{words.length}</Text>
+      </View>
+
+      <ScrollView style={styles.wordSection}>
+        {/* 英文单词 */}
+        <View style={styles.englishSection}>
+          <Text style={styles.englishWord}>{currentWord.word}</Text>
+          <TouchableOpacity 
+            style={styles.pronunciationBtn} 
+            onPress={handlePlayPronunciation}
+            disabled={isPlaying}
+          >
+            <Text style={styles.btnText}>{isPlaying ? '播放中...' : '🔊'}</Text>
+          </TouchableOpacity>
         </View>
 
-        {/* 单词显示区域 */}
-        <View style={styles.wordSection}>
-          <View style={styles.englishSection}>
-            <Text style={styles.englishWord}>{currentWord.word}</Text>
-            <TouchableOpacity 
-              style={styles.pronunciationButton}
-              onPress={handlePlayPronunciation}
-              disabled={isPlaying}
-            >
-              <Text style={styles.buttonText}>
-                {isPlaying ? '播放中...' : '🔊'}
-              </Text>
-            </TouchableOpacity>
-          </View>
+        {/* 音标 */}
+        {currentWord.phonetic && (
+          <Text style={styles.phonetic}>{currentWord.phonetic}</Text>
+        )}
 
-          {/* 中文释义 */}
+        {/* 中文释义 */}
+        {showAnswer && (
           <View style={styles.chineseSection}>
             <Text style={styles.chineseMeaning}>{currentWord.definition}</Text>
-            {currentWord.phonetic && (
-              <Text style={styles.phonetic}>{currentWord.phonetic}</Text>
+            {currentWord.part_of_speech && (
+              <Text style={styles.partOfSpeech}>{currentWord.part_of_speech}</Text>
+            )}
+            {currentWord.example_sentences && currentWord.example_sentences.length > 0 && (
+              <Text style={styles.example}>{currentWord.example_sentences[0]}</Text>
             )}
           </View>
+        )}
 
-          {/* 发音练习区域 */}
-          <View style={styles.pronunciationPracticeSection}>
-            <Text style={styles.practiceTitle}>发音练习</Text>
-            
-            <TouchableOpacity 
-              style={[
-                styles.recordButton,
-                isRecording && styles.recordingButton
-              ]}
-              onPress={handleStartPronunciationPractice}
-              disabled={isRecording}
-            >
-              <Text style={styles.recordButtonText}>
-                {isRecording ? '录音中...' : '🎤 跟读练习'}
-              </Text>
-            </TouchableOpacity>
-            
-            {pronunciationScore !== null && (
-              <View style={styles.scoreSection}>
-                <Text style={styles.scoreText}>
-                  发音得分: {pronunciationScore}/100
-                </Text>
-                <Text style={styles.feedbackText}>{feedback}</Text>
-              </View>
-            )}
-          </View>
-        </View>
+        {/* 答案切换按钮 */}
+        <TouchableOpacity 
+          style={styles.toggleBtn} 
+          onPress={() => setShowAnswer(!showAnswer)}
+        >
+          <Text style={styles.toggleBtnText}>
+            {showAnswer ? '隐藏答案' : '显示答案'}
+          </Text>
+        </TouchableOpacity>
 
-        {/* 操作按钮 */}
-        <View style={styles.actionSection}>
-          <TouchableOpacity style={styles.masteryButton} onPress={handleKnow}>
-            <Text style={styles.masteryButtonText}>认识 ✓</Text>
+        {/* 发音练习区域 */}
+        <View style={styles.pronunciationPracticeSection}>
+          <Text style={styles.practiceTitle}>发音练习</Text>
+          
+          <TouchableOpacity 
+            style={[styles.recordBtn, isRecording && styles.recordingBtn]} 
+            onPress={handleStartPronunciationPractice}
+            disabled={isRecording}
+          >
+            <Text style={styles.recordBtnText}>
+              {isRecording ? '🎤 录音中...' : '🎤 跟读练习'}
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.masteryButton} onPress={handleHard}>
-            <Text style={styles.masteryButtonText}>不确定 ?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.masteryButton} onPress={handleForgot}>
-            <Text style={styles.masteryButtonText}>不认识 ✗</Text>
-          </TouchableOpacity>
+          
+          {/* 评分结果显示 */}
+          {pronunciationScore !== null && (
+            <View style={styles.scoreSection}>
+              <Text style={styles.scoreText}>发音得分: {pronunciationScore}/100</Text>
+              <Text style={styles.feedbackText}>{feedback}</Text>
+            </View>
+          )}
         </View>
       </ScrollView>
+
+      {/* 操作按钮区域 */}
+      <View style={styles.actionSection}>
+        <View style={styles.masterySection}>
+          <TouchableOpacity style={[styles.masteryBtn, styles.knowBtn]} onPress={handleKnow}>
+            <Text style={styles.masteryBtnText}>认识 ✓</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.masteryBtn, styles.hardBtn]} onPress={handleHard}>
+            <Text style={styles.masteryBtnText}>不确定 ?</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.masteryBtn, styles.forgotBtn]} onPress={handleForgot}>
+            <Text style={styles.masteryBtnText}>不认识 ✗</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
@@ -283,99 +248,137 @@ const WordLearningScreen = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#f8f9fa',
   },
-  scrollView: {
-    flex: 1,
+  loadingText: {
+    marginTop: 20,
+    fontSize: 16,
+    color: '#666',
   },
-  progressContainer: {
-    padding: 20,
+  noWordsText: {
+    marginTop: 50,
+    fontSize: 18,
+    color: '#666',
+    textAlign: 'center',
+  },
+  progressSection: {
+    padding: 16,
     backgroundColor: 'white',
-    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#e0e0e0',
+  },
+  progressBar: {
+    height: 8,
+    marginBottom: 8,
   },
   progressText: {
-    fontSize: 16,
-    fontWeight: 'bold',
+    textAlign: 'right',
+    fontSize: 14,
+    color: '#666',
   },
   wordSection: {
-    padding: 20,
-    backgroundColor: 'white',
-    margin: 10,
-    borderRadius: 12,
+    flex: 1,
+    padding: 16,
   },
   englishSection: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 15,
+    marginBottom: 12,
   },
   englishWord: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
     color: '#333',
+    flex: 1,
   },
-  pronunciationButton: {
-    backgroundColor: '#007AFF',
-    paddingHorizontal: 15,
-    paddingVertical: 8,
+  pronunciationBtn: {
+    width: 40,
+    height: 40,
     borderRadius: 20,
+    backgroundColor: '#4a6cf7',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 12,
   },
-  buttonText: {
+  btnText: {
     color: 'white',
     fontSize: 16,
-    fontWeight: 'bold',
-  },
-  chineseSection: {
-    marginBottom: 20,
-  },
-  chineseMeaning: {
-    fontSize: 18,
-    color: '#666',
-    lineHeight: 24,
   },
   phonetic: {
     fontSize: 16,
-    color: '#888',
+    color: '#666',
     fontStyle: 'italic',
-    marginTop: 5,
+    marginBottom: 16,
+  },
+  chineseSection: {
+    backgroundColor: '#f0f8ff',
+    padding: 16,
+    borderRadius: 12,
+    marginBottom: 16,
+  },
+  chineseMeaning: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#333',
+    marginBottom: 4,
+  },
+  partOfSpeech: {
+    fontSize: 14,
+    color: '#666',
+    marginBottom: 8,
+  },
+  example: {
+    fontSize: 14,
+    color: '#555',
+    fontStyle: 'italic',
+  },
+  toggleBtn: {
+    backgroundColor: '#e9ecef',
+    padding: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginBottom: 24,
+  },
+  toggleBtnText: {
+    fontSize: 16,
+    color: '#495057',
   },
   pronunciationPracticeSection: {
     alignItems: 'center',
+    marginBottom: 24,
   },
   practiceTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 15,
+    fontWeight: '600',
     color: '#333',
+    marginBottom: 16,
   },
-  recordButton: {
-    backgroundColor: '#FF6B6B',
-    paddingHorizontal: 30,
-    paddingVertical: 15,
-    borderRadius: 25,
-    minWidth: 200,
+  recordBtn: {
+    backgroundColor: '#dc3545',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 24,
+    minWidth: 120,
     alignItems: 'center',
   },
-  recordingButton: {
-    backgroundColor: '#FF4757',
+  recordingBtn: {
+    backgroundColor: '#6c757d',
   },
-  recordButtonText: {
+  recordBtnText: {
     color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 16,
+    fontWeight: '600',
   },
   scoreSection: {
-    marginTop: 20,
-    padding: 15,
-    backgroundColor: '#e8f5e8',
-    borderRadius: 10,
+    marginTop: 16,
     alignItems: 'center',
   },
   scoreText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#2E8B57',
-    marginBottom: 5,
+    color: '#28a745',
+    marginBottom: 8,
   },
   feedbackText: {
     fontSize: 14,
@@ -383,26 +386,36 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   actionSection: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    padding: 20,
+    padding: 16,
     backgroundColor: 'white',
-    margin: 10,
-    borderRadius: 12,
+    borderTopWidth: 1,
+    borderTopColor: '#e0e0e0',
   },
-  masteryButton: {
+  masterySection: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  masteryBtn: {
     flex: 1,
-    marginHorizontal: 5,
-    backgroundColor: '#4ECDC4',
     padding: 12,
     borderRadius: 8,
     alignItems: 'center',
+    marginHorizontal: 4,
   },
-  masteryButtonText: {
+  knowBtn: {
+    backgroundColor: '#28a745',
+  },
+  hardBtn: {
+    backgroundColor: '#ffc107',
+  },
+  forgotBtn: {
+    backgroundColor: '#dc3545',
+  },
+  masteryBtnText: {
     color: 'white',
     fontSize: 14,
-    fontWeight: 'bold',
+    fontWeight: '600',
   },
 });
 
-export default WordLearningScreen;
+export default App;
