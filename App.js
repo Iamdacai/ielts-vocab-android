@@ -1,7 +1,7 @@
 /**
  * 雅思智能背单词 - Android版本
  * React Native跨平台应用（基于微信小程序版本重构）
- * 第二阶段：真实API集成
+ * 第二阶段：真实API集成（简化版，移除音频功能）
  */
 
 import React, { useState, useEffect } from 'react';
@@ -18,7 +18,6 @@ import {
   ProgressBarAndroid,
 } from 'react-native';
 import { getNewWords, recordProgress } from './src/utils/wordData';
-import { analyzePronunciation, playWordPronunciation } from './src/utils/pronunciation';
 
 // 单词学习主组件
 const App = () => {
@@ -27,10 +26,6 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [showAnswer, setShowAnswer] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isRecording, setIsRecording] = useState(false);
-  const [pronunciationScore, setPronunciationScore] = useState(null);
-  const [feedback, setFeedback] = useState('');
 
   // 加载新词
   useEffect(() => {
@@ -61,41 +56,9 @@ const App = () => {
     if (currentWordIndex < words.length - 1) {
       setCurrentWordIndex(currentWordIndex + 1);
       setShowAnswer(false);
-      setPronunciationScore(null);
-      setFeedback('');
       setProgress(((currentWordIndex + 2) / words.length) * 100);
     } else {
       Alert.alert('完成', '今日新词学习完成！');
-    }
-  };
-
-  const handlePlayPronunciation = async () => {
-    if (!currentWord) return;
-    try {
-      setIsPlaying(true);
-      await playWordPronunciation(currentWord.word);
-    } catch (error) {
-      console.error('播放发音失败:', error);
-      Alert.alert('播放失败', '发音播放失败');
-    } finally {
-      setIsPlaying(false);
-    }
-  };
-
-  const handleStartPronunciationPractice = async () => {
-    if (!currentWord || isRecording) return;
-    
-    try {
-      setIsRecording(true);
-      const result = await analyzePronunciation(currentWord.word);
-      setPronunciationScore(result.score);
-      setFeedback(result.feedback);
-      Alert.alert('发音评分', `得分: ${result.score}/100`);
-    } catch (error) {
-      console.error('发音分析失败:', error);
-      Alert.alert('分析失败', '发音分析服务不可用');
-    } finally {
-      setIsRecording(false);
     }
   };
 
@@ -166,13 +129,6 @@ const App = () => {
         {/* 英文单词 */}
         <View style={styles.englishSection}>
           <Text style={styles.englishWord}>{currentWord.word}</Text>
-          <TouchableOpacity 
-            style={styles.pronunciationBtn} 
-            onPress={handlePlayPronunciation}
-            disabled={isPlaying}
-          >
-            <Text style={styles.btnText}>{isPlaying ? '播放中...' : '🔊'}</Text>
-          </TouchableOpacity>
         </View>
 
         {/* 音标 */}
@@ -202,29 +158,6 @@ const App = () => {
             {showAnswer ? '隐藏答案' : '显示答案'}
           </Text>
         </TouchableOpacity>
-
-        {/* 发音练习区域 */}
-        <View style={styles.pronunciationPracticeSection}>
-          <Text style={styles.practiceTitle}>发音练习</Text>
-          
-          <TouchableOpacity 
-            style={[styles.recordBtn, isRecording && styles.recordingBtn]} 
-            onPress={handleStartPronunciationPractice}
-            disabled={isRecording}
-          >
-            <Text style={styles.recordBtnText}>
-              {isRecording ? '🎤 录音中...' : '🎤 跟读练习'}
-            </Text>
-          </TouchableOpacity>
-          
-          {/* 评分结果显示 */}
-          {pronunciationScore !== null && (
-            <View style={styles.scoreSection}>
-              <Text style={styles.scoreText}>发音得分: {pronunciationScore}/100</Text>
-              <Text style={styles.feedbackText}>{feedback}</Text>
-            </View>
-          )}
-        </View>
       </ScrollView>
 
       {/* 操作按钮区域 */}
@@ -292,19 +225,6 @@ const styles = StyleSheet.create({
     color: '#333',
     flex: 1,
   },
-  pronunciationBtn: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: '#4a6cf7',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 12,
-  },
-  btnText: {
-    color: 'white',
-    fontSize: 16,
-  },
   phonetic: {
     fontSize: 16,
     color: '#666',
@@ -343,47 +263,6 @@ const styles = StyleSheet.create({
   toggleBtnText: {
     fontSize: 16,
     color: '#495057',
-  },
-  pronunciationPracticeSection: {
-    alignItems: 'center',
-    marginBottom: 24,
-  },
-  practiceTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 16,
-  },
-  recordBtn: {
-    backgroundColor: '#dc3545',
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    borderRadius: 24,
-    minWidth: 120,
-    alignItems: 'center',
-  },
-  recordingBtn: {
-    backgroundColor: '#6c757d',
-  },
-  recordBtnText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  scoreSection: {
-    marginTop: 16,
-    alignItems: 'center',
-  },
-  scoreText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#28a745',
-    marginBottom: 8,
-  },
-  feedbackText: {
-    fontSize: 14,
-    color: '#666',
-    textAlign: 'center',
   },
   actionSection: {
     padding: 16,
