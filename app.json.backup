@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "雅思智能背单词",
+    "slug": "ielts-vocab-android",
+    "version": "1.0.0",
+    "android": {
+      "package": "com.ieltsvocab"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "828467f9-f8cc-4087-bc5b-83108b705ad3"
+      }
+    }
+  }
+}
