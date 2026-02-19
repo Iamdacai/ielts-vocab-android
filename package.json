@@ -25,7 +25,8 @@
     "react-native-screens": "~3.20.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "metro-react-native-babel-transformer": "^0.77.0"
   },
   "private": true
 }
