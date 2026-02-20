@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "@react-native/babel-preset": "0.71.14",
     "eas-cli": "^18.0.1"
   },
   "private": true

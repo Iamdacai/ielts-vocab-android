@@ -55,22 +55,21 @@ jobs:
           echo "Debug keystore already exists, skipping creation..."
         fi
     
-    - name: Generate JS Bundle
+    - name: Generate JavaScript bundle using Expo
       run: |
-        mkdir -p android/app/src/main/assets
-        npm run bundle:android
+        npx expo export --platform android --output-dir android/app/src/main/assets
         
     - name: Build Android APK
       run: |
         cd android
         chmod +x ./gradlew
-        ./gradlew assembleRelease --no-daemon --max-workers=2
+        ./gradlew assembleDebug --no-daemon --max-workers=2
         
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
       with:
         name: ielts-vocab-android-apk
-        path: android/app/build/outputs/apk/release/app-release-unsigned.apk
+        path: android/app/build/outputs/apk/debug/app-debug.apk
         retention-days: 30
         
     - name: Upload build logs (if failed)
