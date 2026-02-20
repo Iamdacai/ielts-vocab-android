@@ -55,10 +55,6 @@ jobs:
           echo "Debug keystore already exists, skipping creation..."
         fi
     
-    - name: Generate JavaScript bundle using Expo
-      run: |
-        npx expo export --platform android --output-dir android/app/src/main/assets
-        
     - name: Build Android APK
       run: |
         cd android
@@ -71,6 +67,12 @@ jobs:
         name: ielts-vocab-android-apk
         path: android/app/build/outputs/apk/debug/app-debug.apk
         retention-days: 30
+        
+    # Test the APK can be installed (optional)
+    - name: Verify APK exists
+      run: |
+        ls -la android/app/build/outputs/apk/debug/
+        file android/app/build/outputs/apk/debug/app-debug.apk
         
     - name: Upload build logs (if failed)
       if: failure()
