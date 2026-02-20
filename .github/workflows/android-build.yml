@@ -37,19 +37,23 @@ jobs:
         npm ci
         npm install --save-dev @expo/ngrok@^4.1.0
     
-    - name: Create debug keystore
+    - name: Create debug keystore (if not exists)
       run: |
         mkdir -p android/app/src/main/assets
-        echo "Creating debug keystore for CI build..."
-        keytool -genkeypair \
-          -alias androiddebugkey \
-          -keypass android \
-          -keystore android/app/debug.keystore \
-          -storepass android \
-          -dname "CN=Android Debug,O=Android,C=US" \
-          -keyalg RSA \
-          -keysize 2048 \
-          -validity 10000
+        if [ ! -f "android/app/debug.keystore" ]; then
+          echo "Creating debug keystore for CI build..."
+          keytool -genkeypair \
+            -alias androiddebugkey \
+            -keypass android \
+            -keystore android/app/debug.keystore \
+            -storepass android \
+            -dname "CN=Android Debug,O=Android,C=US" \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000
+        else
+          echo "Debug keystore already exists, skipping creation..."
+        fi
     
     - name: Build Android APK
       run: |
