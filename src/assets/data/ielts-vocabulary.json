@@ -1,0 +1,2531 @@
+[
+  {
+    "word": "adage",
+    "phonetic": "ˈऐडिज्‌",
+    "part_of_speech": "",
+    "definition": "a well-known phrase expressing something that is always true about people or the world\nकहावत, लोकोक्ति",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "amuse",
+    "phonetic": "अˈम्‍यूज़्‌",
+    "part_of_speech": "",
+    "definition": "1. to make somebody laugh or smile; to seem funny to somebody\nकिसी को हँसाना; किसी बात का मज़ेदार लगना\nEverybody laughed but I couldn’t understand what had amused them.\n2. to make time pass pleasantly for somebody; to stop somebody from getting bored\nकिसी का जी बहलाना; मनोरंजन करना\nI did some crosswords to amuse myself on the journey.",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "amicable",
+    "phonetic": "ˈऐमिकब्‌ल्‌",
+    "part_of_speech": "",
+    "definition": "made or done in a friendly way, without argument\nसौहार्दपूर्ण, स्‍नेही",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "agnostic",
+    "phonetic": "ऐग्ˈनॉस्‌टिक्‌",
+    "part_of_speech": "",
+    "definition": "a person who is not sure if God exists or not\nईश्‍वर की सत्ता के विषय में संशय रखने वाला; संशयवादी, अज्ञेयवादी",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "ailing",
+    "phonetic": "ˈएलिङ्‌",
+    "part_of_speech": "",
+    "definition": "not in good health; weak\nबीमार; कमज़ोर",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "astray",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "1. away from the correct path or direction.\n\"we went astray but a man redirected us\"\n\n2. into error or morally questionable behaviour.\n\"he was led astray by boozy colleagues\"",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "abscond",
+    "phonetic": "अब्ˈस्‍कॉन्‍ड्‌",
+    "part_of_speech": "",
+    "definition": "to run away from a place where you should stay, sometimes with something that you should not take\nकिसी स्‍थान से फ़रार होना; प्रपलायन करना",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "assault",
+    "phonetic": "अˈसॉल्‍ट्‌",
+    "part_of_speech": "",
+    "definition": "a sudden attack on somebody/something\nअचानक हुआ हमला, प्रहार, धावा",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Acquaintance",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Abetment",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Adaptive",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Ample",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Ante",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Apparently",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Antigen",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Ablaze",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Accompanied",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Adverse",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Abduct",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Agile",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Absurd",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Assignation",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Abrogate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Ad interim",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Assess",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Asylum",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Abruptly",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Aka",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Atypical",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "brash",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Bestowed",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Buck",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Broth",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Brew",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Behooves",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Blatant",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Bury",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Blunt instrument",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Boulder",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Butler",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Brevity",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Bevy",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Bullying",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Crucial",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Caveat",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Chime",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Composable",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Concedes",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Crew",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Condone",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Consent",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Consensual",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Chip-in",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Complacent",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "County",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Consent",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Chaos",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Cite",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Coercion",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Caucus",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Cruise",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Calibration",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Cherish",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Camaraderie",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Chores",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Dearth",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Defraud",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Discord",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Disregard",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Doom",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Diligent",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Damp",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Douse",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Dissuade",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Doting",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Deter",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Defer",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Dissent",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Deplorable",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Deserted",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Detour",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Dangling",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Disposition",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Deceased",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Diktat",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Divestment",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Dupe",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Delineate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Derivative",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Delineate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Deceive",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Disguise",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Diligence",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Eavesdropping",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Etymology",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Expeditiously",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Exgratia",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Evasion",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Evident",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Expats",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Extradition",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Elevation",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Esplanade",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Errand",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Ephemeral",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Enablement",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Encompass",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Embargo",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Expulsion",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Encroachment",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Frightful",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Foe",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Forgo",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Fled",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Fiercely",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Fugitive",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Fable",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Fissure",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Foe",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Fuss",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Geek",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Gotchas",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Gist",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Gravity",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Grin",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Gloomy",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Go off the rails",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Gimmick",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Genocide",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Honing",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Hinder",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Hilarious",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Heads Up",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Hitch",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Hone",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Herd",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Hurl",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Hostage",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Hurl",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Homage",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Impersonation",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Impediment",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Inadvertently",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Illicit",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Impending",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Instigating",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Intoxicated",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Implode",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Inexplicable",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Incumbent",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Incarnate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Intermittent",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Intuitive",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Intimidated",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Intractable",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Introspection",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Jolt",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Lure",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Lewd",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Levy",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Leverage",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Lucrative",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Liaising",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Mere",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Moot",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Multilateralism",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Mundane",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Meddled",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Mitigation",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Manoeuvre",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Mediocre",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Nagged",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Nabbed",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Nerd",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Nuggets",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Nostalgic",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Nerdy",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Nimble",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Outage",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Outcry",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Opaque",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Obscene",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Opportune",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Pact",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Precipitation",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Pondering",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Prolong",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Pertinent",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Pesky",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Percolate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Persistence",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Patrons",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Purging",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Propagation",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Puddle",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Prosthetic",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Possession",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Probe",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Passers",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Peculiar",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Power outage",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Picky",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Perpetual",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Partner",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Per se",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Pitch",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Punk",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Procrastinate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Roger",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Rejuvenate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Rages",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Regime",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Redact",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Replenish",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Remuneration",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Retaliation",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "reluctance",
+    "phonetic": "रिˌम्‌यूनˈरेश्‌न्",
+    "part_of_speech": "",
+    "definition": "a payment made to somebody for the work they have done\nपारिश्रमिक, मेहनताना\nThe remuneration packages were revised according to the employee's performance.",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Sabotage",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Strangulated",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Stint",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Silos",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Sane",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Scintillating",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Sloppy",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Stipulate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Solely",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Stance",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Stranded",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Succumbed",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Stumbled",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Sentinels",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Slog",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Spike",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Surge",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Snooping",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Swab",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Sting",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Stargazers",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Stalemate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Sombre",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Suffice",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Syndicate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Sermonise",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Stint",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Saxon",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Stumbled",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Swamped",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Simulate",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Sarcastic",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Seldom",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Stubbed",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Toddler",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Teeming",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Tidied",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Trample",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Threshold",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Upon",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Unveil",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Uneven",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Unfurls",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Uurmoil",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Urges",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Uproar",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Vigilant",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Valour",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Vows",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Vigil",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Veer",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Vested",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Vest",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Vanity freak",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Vegetation",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Vitals",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Venom",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Waning",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Wee",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Waylaid",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Whistle",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Whopping",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Wayward",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  },
+  {
+    "word": "Yelling",
+    "phonetic": "",
+    "part_of_speech": "",
+    "definition": "",
+    "example_sentences": [],
+    "frequency_level": "medium",
+    "cambridge_book": 10
+  }
+]

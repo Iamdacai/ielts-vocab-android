@@ -1,6 +1,8 @@
 node_modules/
 *.zip
-*.jar
 .env
 .DS_Store
 Thumbs.db
+
+# Keep gradle wrapper jar
+!gradle/wrapper/gradle-wrapper.jar
