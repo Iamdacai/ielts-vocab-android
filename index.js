@@ -1,14 +1,8 @@
-/**
- * 雅思智能背单词 - Android版本入口文件
- * 基于微信小程序版本重构
- */
+import { registerRootComponent } from 'expo';
 
-import React from 'react';
-import { AppRegistry } from 'react-native';
-import AppNavigator from './src/AppNavigator';
+import App from './App';
 
-const App = () => {
-  return <AppNavigator />;
-};
-
-AppRegistry.registerComponent('ielts-vocab-android', () => App);
+// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
+// It also ensures that whether you load the app in Expo Go or in a native build,
+// the environment is set up appropriately
+registerRootComponent(App);
