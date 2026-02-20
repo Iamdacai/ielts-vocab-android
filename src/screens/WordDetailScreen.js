@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -7,16 +7,24 @@ import {
   SafeAreaView,
   ScrollView,
   Alert,
-  ActivityIndicator
+  ActivityIndicator,
+  PermissionsAndroid,
+  Platform
 } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import VocabularyService from '../services/vocabulary';
+import PronunciationService from '../services/pronunciation';
+import PronunciationAssessmentService from '../services/pronunciationAssessment';
+import AudioPlayer from '../components/AudioPlayer';
 
 const WordDetailScreen = () => {
   const route = useRoute();
   const { wordId } = route.params;
   const [word, setWord] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [pronunciationScore, setPronunciationScore] = useState(null);
+  const [isRecording, setIsRecording] = useState(false);
 
   useEffect(() => {
     const loadWord = async () => {
@@ -34,14 +42,69 @@ const WordDetailScreen = () => {
     loadWord();
   }, [wordId]);
 
-  const handlePronunciation = () => {
-    // TODO: Play pronunciation audio
-    Alert.alert('发音功能', '播放单词发音');
+  const handlePronunciation = async () => {
+    if (!word) return;
+    
+    try {
+      setIsPlaying(true);
+      await PronunciationService.playWordPronunciation(word.word);
+    } catch (error) {
+      console.error('Pronunciation error:', error);
+      Alert.alert('发音错误', '无法播放发音，请检查网络连接');
+    } finally {
+      setIsPlaying(false);
+    }
   };
 
-  const handlePractice = () => {
-    // TODO: Start pronunciation practice
-    Alert.alert('发音练习', '开始发音练习');
+  const handlePractice = async () => {
+    if (!word) return;
+    
+    // Request microphone permission on Android
+    if (Platform.OS === 'android') {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
+          {
+            title: '麦克风权限',
+            message: '需要麦克风权限来进行发音练习',
+            buttonNeutral: '稍后询问',
+            buttonNegative: '取消',
+            buttonPositive: '确定',
+          }
+        );
+        if (granted !== PermissionsAndroid.RESULTS.GRANTED) {
+          Alert.alert('权限被拒绝', '需要麦克风权限才能进行发音练习');
+          return;
+        }
+      } catch (err) {
+        console.warn(err);
+        return;
+      }
+    }
+
+    try {
+      setIsRecording(true);
+      Alert.alert('开始练习', `请朗读单词: ${word.word}`, [
+        { text: '开始录音', onPress: startRecording },
+        { text: '取消', style: 'cancel' }
+      ]);
+    } catch (error) {
+      console.error('Practice error:', error);
+      Alert.alert('练习错误', '无法开始发音练习');
+    } finally {
+      setIsRecording(false);
+    }
+  };
+
+  const startRecording = async () => {
+    try {
+      const score = await PronunciationAssessmentService.analyzePronunciation(word.word);
+      setPronunciationScore(score);
+      Alert.alert('发音评分', `您的发音得分为: ${score.score}分\n${score.feedback}`);
+    } catch (error) {
+      console.error('Recording error:', error);
+      Alert.alert('录音错误', '录音过程中出现错误');
+    }
   };
 
   if (loading) {
@@ -85,12 +148,36 @@ const WordDetailScreen = () => {
           </View>
         )}
 
+        {pronunciationScore && (
+          <View style={styles.scoreContainer}>
+            <Text style={styles.scoreTitle}>最近发音评分:</Text>
+            <Text style={styles.scoreText}>{pronunciationScore.score}分</Text>
+            <Text style={styles.feedbackText}>{pronunciationScore.feedback}</Text>
+          </View>
+        )}
+
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.pronunciationButton} onPress={handlePronunciation}>
-            <Text style={styles.buttonText}>🔊 发音</Text>
+          <TouchableOpacity 
+            style={[styles.pronunciationButton, isPlaying && styles.buttonDisabled]} 
+            onPress={handlePronunciation}
+            disabled={isPlaying}
+          >
+            {isPlaying ? (
+              <ActivityIndicator color="white" />
+            ) : (
+              <Text style={styles.buttonText}>🔊 发音</Text>
+            )}
           </TouchableOpacity>
-          <TouchableOpacity style={styles.practiceButton} onPress={handlePractice}>
-            <Text style={styles.buttonText}>🎤 练习</Text>
+          <TouchableOpacity 
+            style={[styles.practiceButton, isRecording && styles.buttonDisabled]} 
+            onPress={handlePractice}
+            disabled={isRecording}
+          >
+            {isRecording ? (
+              <ActivityIndicator color="white" />
+            ) : (
+              <Text style={styles.buttonText}>🎤 练习</Text>
+            )}
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -161,6 +248,29 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     marginBottom: 6,
   },
+  scoreContainer: {
+    backgroundColor: '#e8f5e8',
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 20,
+  },
+  scoreTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#2e7d32',
+    marginBottom: 4,
+  },
+  scoreText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#2e7d32',
+    marginBottom: 8,
+  },
+  feedbackText: {
+    fontSize: 14,
+    color: '#555',
+    lineHeight: 20,
+  },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -182,6 +292,9 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  buttonDisabled: {
+    opacity: 0.6,
   },
 });
 

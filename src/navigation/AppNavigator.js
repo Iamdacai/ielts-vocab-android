@@ -10,6 +10,7 @@ import VocabularyScreen from '../screens/VocabularyScreen';
 import PronunciationScreen from '../screens/PronunciationScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import WordDetailScreen from '../screens/WordDetailScreen';
+import PronunciationPracticeScreen from '../screens/PronunciationPracticeScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -26,6 +27,23 @@ const HomeStack = () => {
         name="WordDetail" 
         component={WordDetailScreen} 
         options={{ title: '单词详情' }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const PronunciationStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen 
+        name="Pronunciation" 
+        component={PronunciationScreen} 
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen 
+        name="PronunciationPractice" 
+        component={PronunciationPracticeScreen} 
+        options={{ title: '发音练习' }}
       />
     </Stack.Navigator>
   );
@@ -65,7 +83,7 @@ const AppNavigator = () => {
         />
         <Tab.Screen 
           name="Pronunciation" 
-          component={PronunciationScreen} 
+          component={PronunciationStack} 
           options={{ title: '发音' }}
         />
         <Tab.Screen 
