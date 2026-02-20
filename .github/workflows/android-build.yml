@@ -2,9 +2,9 @@ name: Build Android App
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, clean-version ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, clean-version ]
   workflow_dispatch:
 
 jobs:
