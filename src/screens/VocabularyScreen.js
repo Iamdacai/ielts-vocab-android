@@ -6,27 +6,42 @@ import {
   FlatList,
   TouchableOpacity,
   ActivityIndicator,
-  SafeAreaView
+  SafeAreaView,
+  RefreshControl,
+  Alert
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { getVocabularyService } from '../services/vocabulary';
 
 const VocabularyScreen = () => {
   const navigation = useNavigation();
   const [words, setWords] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
+  const vocabularyService = getVocabularyService();
 
   useEffect(() => {
-    // TODO: Load vocabulary data from local database
-    // For now, show placeholder
-    setTimeout(() => {
-      setWords([
-        { id: 1, word: 'abandon', phonetic: '/əˈbændən/', definition: '放弃，抛弃' },
-        { id: 2, word: 'benefit', phonetic: '/ˈbenɪfɪt/', definition: '利益，好处' },
-        { id: 3, word: 'crucial', phonetic: '/ˈkruːʃl/', definition: '至关重要的' }
-      ]);
-      setLoading(false);
-    }, 1000);
+    loadVocabulary();
   }, []);
+
+  const loadVocabulary = async () => {
+    try {
+      setLoading(true);
+      const allWords = await vocabularyService.getAllWords();
+      setWords(allWords);
+    } catch (error) {
+      console.error('Failed to load vocabulary:', error);
+      Alert.alert('错误', '加载词汇数据失败，请重试');
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
+  };
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    loadVocabulary();
+  };
 
   const renderWordItem = ({ item }) => (
     <TouchableOpacity
@@ -34,7 +49,7 @@ const VocabularyScreen = () => {
       onPress={() => navigation.navigate('WordDetail', { word: item })}
     >
       <Text style={styles.wordText}>{item.word}</Text>
-      <Text style={styles.phoneticText}>{item.phonetic}</Text>
+      <Text style={styles.phoneticText}>{item.phonetic || ''}</Text>
       <Text style={styles.definitionText}>{item.definition}</Text>
     </TouchableOpacity>
   );
@@ -54,6 +69,14 @@ const VocabularyScreen = () => {
         renderItem={renderWordItem}
         keyExtractor={(item) => item.id.toString()}
         contentContainerStyle={styles.listContainer}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+        ListEmptyComponent={
+          <View style={styles.emptyContainer}>
+            <Text style={styles.emptyText}>暂无词汇数据</Text>
+          </View>
+        }
       />
     </SafeAreaView>
   );
@@ -66,6 +89,16 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     padding: 16,
+  },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  emptyText: {
+    fontSize: 16,
+    color: '#999',
   },
   wordItem: {
     backgroundColor: 'white',

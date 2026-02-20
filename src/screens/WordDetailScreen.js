@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -6,13 +6,33 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
-  Alert
+  Alert,
+  ActivityIndicator
 } from 'react-native';
 import { useRoute } from '@react-navigation/native';
+import VocabularyService from '../services/vocabulary';
 
 const WordDetailScreen = () => {
   const route = useRoute();
-  const { word } = route.params;
+  const { wordId } = route.params;
+  const [word, setWord] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadWord = async () => {
+      try {
+        const wordData = await VocabularyService.getWordById(wordId);
+        setWord(wordData);
+      } catch (error) {
+        console.error('Failed to load word:', error);
+        Alert.alert('错误', '加载单词失败');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadWord();
+  }, [wordId]);
 
   const handlePronunciation = () => {
     // TODO: Play pronunciation audio
@@ -23,6 +43,22 @@ const WordDetailScreen = () => {
     // TODO: Start pronunciation practice
     Alert.alert('发音练习', '开始发音练习');
   };
+
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <ActivityIndicator size="large" color="#007AFF" />
+      </SafeAreaView>
+    );
+  }
+
+  if (!word) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.errorText}>单词未找到</Text>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -69,6 +105,12 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 20,
+  },
+  errorText: {
+    fontSize: 18,
+    color: '#ff0000',
+    textAlign: 'center',
+    marginTop: 50,
   },
   wordText: {
     fontSize: 32,

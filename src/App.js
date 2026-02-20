@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { initDatabase } from './services/initDatabase';
 
 // Screens
 import HomeScreen from './screens/HomeScreen';
@@ -32,6 +33,11 @@ function HomeStack() {
 }
 
 function App() {
+  // Initialize database on app startup
+  useEffect(() => {
+    initDatabase();
+  }, []);
+
   return (
     <NavigationContainer>
       <Tab.Navigator
