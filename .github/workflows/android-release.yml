@@ -1,0 +1,75 @@
+name: Build Android Release APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ release-build ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+    
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+    
+    - name: Install npm dependencies
+      run: |
+        npm ci
+        npm install -g eas-cli@latest
+    
+    - name: Create debug keystore (for release build)
+      run: |
+        mkdir -p android/app/src/main/assets
+        if [ ! -f "android/app/debug.keystore" ]; then
+          echo "Creating debug keystore for release build..."
+          keytool -genkeypair \
+            -alias androiddebugkey \
+            -keypass android \
+            -keystore android/app/debug.keystore \
+            -storepass android \
+            -dname "CN=Android Debug,O=Android,C=US" \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000
+        fi
+    
+    - name: Build Android Release APK
+      run: |
+        cd android
+        chmod +x ./gradlew
+        # Increase inotify limit to avoid ENOSPC error
+        echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+        ./gradlew assembleRelease --no-daemon --max-workers=2
+        
+    - name: Upload Release APK artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ielts-vocab-android-release-apk
+        path: android/app/build/outputs/apk/release/app-release.apk
+        retention-days: 30
+        
+    - name: Upload build logs (if failed)
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-logs
+        path: android/app/build/reports/
+        retention-days: 7
