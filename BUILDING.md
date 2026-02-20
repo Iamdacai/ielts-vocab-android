@@ -1,41 +1,32 @@
 # 构建指南
 
-## GitHub Actions 自动构建
+## Debug APK (开发测试)
+使用 GitHub Actions 自动构建 debug APK：
+- 配置: `.github/workflows/android-build.yml`
+- 命令: `./gradlew assembleDebug`
+- 限制: 需要网络连接加载 JS bundle
 
-### 成功配置要点
-- 使用 `./gradlew assembleDebug` 构建 debug APK
-- 不要手动添加 babel-preset 依赖
-- 不要创建自定义 Babel 配置文件
-- 保持 package.json 依赖简单
+## Release APK (完全离线)
+手动创建 release APK 步骤：
 
-### 构建产物
-- **APK 路径**: `android/app/build/outputs/apk/debug/app-debug.apk`
-- **APK 类型**: Debug 版本
-- **运行要求**: 首次启动需要网络连接
-
-## 本地构建
-
+### 1. 生成 JS Bundle
 ```bash
-# 安装依赖
-npm ci
-
-# 构建 APK
-cd android
-./gradlew assembleDebug
+chmod +x scripts/create-release-bundle.sh
+./scripts/create-release-bundle.sh
 ```
 
-## 注意事项
+### 2. 构建 Release APK
+```bash
+chmod +x scripts/build-release.sh
+./scripts/build-release.sh
+```
 
-### Debug APK 限制
-Debug APK 在首次启动时需要从 Metro 服务器加载 JavaScript bundle。如果需要完全离线的 APK，请使用 EAS Build 服务。
+### 3. 输出文件
+- APK 路径: `android/app/build/outputs/apk/release/app-release.apk`
+- 特性: 完全离线，无需网络连接
 
-### 避免的常见错误
-1. ❌ 不要手动添加 `@react-native/babel-preset` 依赖
-2. ❌ 不要创建 `.babelrc` 或 `babel.config.js` 文件  
-3. ❌ 不要尝试手动运行 `react-native bundle` 命令
-4. ❌ 不要修改 Expo 的默认 Babel 配置
-
-### 正确的依赖管理
-- 让 Expo 自动处理 React Native 和 Babel 依赖
-- 只在必要时添加第三方库依赖
-- 使用 `npm ci` 确保依赖一致性
+## 关键注意事项
+- 不要手动修改 Babel 配置
+- 不要添加 @react-native/babel-preset 依赖
+- Debug APK 需要 Metro 服务器
+- Release APK 包含预打包的 JS bundle
